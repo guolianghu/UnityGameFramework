@@ -549,7 +549,7 @@ namespace UnityGameFramework.Runtime
                         ReferencePool.Release(loadResourceAgentHelperErrorEventArgs);
                     }
                 }
-                else if (m_AssetBundleRequest.progress != m_LastProgress)
+                else if (m_AssetBundleRequest.progress > m_LastProgress)
                 {
                     m_LastProgress = m_AssetBundleRequest.progress;
                     LoadResourceAgentHelperUpdateEventArgs loadResourceAgentHelperUpdateEventArgs = LoadResourceAgentHelperUpdateEventArgs.Create(LoadResourceProgress.LoadAsset, m_AssetBundleRequest.progress);
