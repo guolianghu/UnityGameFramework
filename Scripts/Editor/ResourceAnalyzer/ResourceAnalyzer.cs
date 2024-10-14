@@ -359,6 +359,10 @@ namespace UnityGameFramework.Editor.ResourceTools
                                 m_SelectedScatteredAssetIndex = selectedIndex;
                                 m_SelectedScatteredAssetName = m_CachedScatteredAssetNames[selectedIndex];
                                 m_SelectedHostAssets = m_Controller.GetHostAssets(m_SelectedScatteredAssetName);
+                                
+                                // 在Project视图中选中资源m_SelectedScatteredAssetName
+                                Object obj = AssetDatabase.LoadAssetAtPath<Object>(m_SelectedScatteredAssetName);
+                                Selection.activeObject = obj;
                             }
                         }
                         EditorGUILayout.EndScrollView();
